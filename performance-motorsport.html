@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0c0c0d">
+<title>Alonso Molas — Performance</title>
+<meta name="description" content="Direção Performance/Motorsport para a Alonso Molas.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Work+Sans:wght@400;500;600;700&display=swap">
+<style>
+    :root{ --red:#e0272b; --red-dark:#b31e21; --bg:#0c0c0d; --bg-alt:#131314; --surface:#19191a; --ink:#f5f5f3; --muted:#8c8c8c; --line:#232323; }
+    *{box-sizing:border-box;}
+    body{margin:0;font-family:'Work Sans',-apple-system,sans-serif;background:var(--bg);color:var(--ink);}
+    h1,h2,h3{font-family:'Bebas Neue',Impact,sans-serif;margin:0;letter-spacing:0.01em;}
+    .mono{font-family:'Space Mono',monospace;}
+    p{margin:0;}
+    a{color:var(--ink);text-decoration:none;}
+    a:hover{color:var(--red);}
+    .container{max-width:1160px;margin:0 auto;width:100%;padding:0 40px;}
+    .section-pad{padding:100px 0;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:0.04em;padding:15px 30px;cursor:pointer;clip-path:polygon(10px 0,100% 0,calc(100% - 10px) 100%,0 100%);min-height:52px;white-space:nowrap;}
+    .btn-primary{background:var(--red);color:#fff;}
+    .btn-primary:hover{background:var(--red-dark);color:#fff;}
+    .btn-outline{background:transparent;color:var(--ink);border:1px solid #3a3a3a;}
+    .btn-outline:hover{border-color:var(--red);color:var(--red);}
+    .tap-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;flex-shrink:0;}
+    .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:56px;height:56px;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,0.5);z-index:40;clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);transition:transform .2s ease;}
+    .fab:hover{transform:scale(1.07);}
+    .map-card{transition:opacity .2s ease;}
+    .map-card:hover{opacity:.82;}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+    .reveal.is-visible{opacity:1;transform:none;}
+    .grid-4 > .reveal:nth-child(1),.grid-3 > .reveal:nth-child(1){transition-delay:0s;}
+    .grid-4 > .reveal:nth-child(2){transition-delay:.08s;}
+    .grid-3 > .reveal:nth-child(2){transition-delay:.1s;}
+    .grid-4 > .reveal:nth-child(3){transition-delay:.16s;}
+    .grid-3 > .reveal:nth-child(3){transition-delay:.2s;}
+    .grid-4 > .reveal:nth-child(4){transition-delay:.24s;}
+    @keyframes heroUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+    .hero-anim{opacity:0;animation:heroUp .8s cubic-bezier(.2,.7,.3,1) forwards;}
+    @media (prefers-reduced-motion: reduce){
+      .reveal,.hero-anim{opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;}
+    }
+    @media (max-width:860px){
+      .section-pad{padding:64px 0;}
+      .container{padding:0 22px;}
+      .hero-diag{display:none !important;}
+      .hero-h1{font-size:52px !important;}
+      .grid-4,.grid-3,.grid-2{grid-template-columns:1fr !important;}
+      .grid-4 > div,.grid-3 > div{border-right:none !important;border-bottom:1px solid var(--line);padding:24px 0 !important;}
+      .grid-4 > div:last-child,.grid-3 > div:last-child{border-bottom:none;}
+      .foot-row{flex-direction:column !important;align-items:flex-start !important;gap:20px !important;}
+      .social-row{flex-direction:column !important;align-items:flex-start !important;gap:26px !important;}
+      .fab{width:52px;height:52px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));}
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%;background:var(--bg);overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:80px;border-bottom:1px solid var(--line);">
+    <span style="font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:0.03em;">ALONSO MOLAS</span>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <a href="https://www.instagram.com/alonsomolas/" target="_blank" aria-label="Instagram" class="tap-icon" style="color:var(--muted);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.4" cy="6.6" r="0.6" fill="currentColor"/></svg>
+      </a>
+      <a href="https://api.whatsapp.com/send?phone=5511940274046" target="_blank" class="btn btn-primary" style="padding:11px 20px;font-size:15px;">WHATSAPP</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="position:relative;padding:90px 0 70px;">
+    <div class="hero-diag" style="position:absolute;top:0;right:0;width:46%;height:100%;background:var(--red);clip-path:polygon(38% 0,100% 0,100% 100%,10% 100%);opacity:0.9;"></div>
+    <div class="container" style="position:relative;display:flex;flex-direction:column;gap:26px;max-width:640px;">
+      <span class="mono hero-anim" style="font-size:12px;color:var(--red);letter-spacing:0.1em;animation-delay:.05s;">// SUSPENSÃO · SÃO PAULO · N° 50 ANOS</span>
+      <h1 class="hero-h1 hero-anim" style="font-size:78px;line-height:0.94;color:var(--ink);animation-delay:.15s;">MEIO SÉCULO<br>DE PRECISÃO.</h1>
+      <p class="hero-anim" style="font-size:16px;color:var(--muted);max-width:420px;line-height:1.6;animation-delay:.28s;">Diagnóstico técnico, peça certa e ajuste calibrado — 50 anos rodando com quem exige performance de verdade na suspensão.</p>
+      <div class="hero-anim" style="display:flex;gap:14px;flex-wrap:wrap;margin-top:10px;animation-delay:.4s;">
+        <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" class="btn btn-primary">WHATSAPP</a>
+        <a href="tel:1155813831" class="btn btn-outline">(11) 5581-3831</a>
+      </div>
+      <div class="hero-anim mono" style="display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;font-size:12px;color:var(--muted);animation-delay:.52s;">
+        <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" style="color:var(--muted);">RUA LUÍS GÓIS, 343/345 · MIRANDÓPOLIS</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / SERVIÇOS RÁPIDOS -->
+  <section class="section-pad" style="border-top:1px solid var(--line);padding-top:60px;padding-bottom:90px;">
+    <div class="container grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+      <div class="reveal" style="padding:0 24px 0 0;border-right:1px solid var(--line);">
+        <span class="mono" style="font-size:12px;color:var(--red);">01</span>
+        <h2 style="font-size:24px;margin-top:14px;">TROCA</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;">Molas originais e esportivas.</p>
+      </div>
+      <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+        <span class="mono" style="font-size:12px;color:var(--red);">02</span>
+        <h2 style="font-size:24px;margin-top:14px;">AJUSTE</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;">Rebaixamento e levantamento.</p>
+      </div>
+      <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+        <span class="mono" style="font-size:12px;color:var(--red);">03</span>
+        <h2 style="font-size:24px;margin-top:14px;">DIAG.</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;">Avaliação técnica completa.</p>
+      </div>
+      <div class="reveal" style="padding:0 0 0 24px;">
+        <span class="mono" style="font-size:12px;color:var(--red);">4.9</span>
+        <h2 style="font-size:24px;margin-top:14px;">GOOGLE</h2>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.5;">314 avaliações reais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="section-pad" style="background:var(--bg-alt);border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="reveal" style="max-width:600px;margin-bottom:56px;">
+        <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// POR QUE A ALONSO MOLAS</span>
+        <h2 style="font-size:44px;margin-top:14px;">CALIBRAGEM DE QUEM TEM ESTRADA.</h2>
+      </div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div class="reveal" style="padding:0 24px 0 0;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">A</span>
+          <h3 style="font-size:20px;margin-top:14px;">50 ANOS</h3>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6;">Meio século focado só em molas e suspensão — repertório que poucas oficinas têm.</p>
+        </div>
+        <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">B</span>
+          <h3 style="font-size:20px;margin-top:14px;">DIAGNÓSTICO</h3>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6;">Nenhum serviço sem avaliação técnica antes. Nada de achismo.</p>
+        </div>
+        <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">C</span>
+          <h3 style="font-size:20px;margin-top:14px;">PEÇA CERTA</h3>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6;">Processo e componente calibrados pro modelo — curso e conforto preservados.</p>
+        </div>
+        <div class="reveal" style="padding:0 0 0 24px;">
+          <span class="mono" style="font-size:12px;color:var(--red);">D</span>
+          <h3 style="font-size:20px;margin-top:14px;">ACOMPANHADO</h3>
+          <p style="font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6;">Do diagnóstico à entrega, o serviço tem acompanhamento técnico de perto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="reveal" style="max-width:600px;margin-bottom:56px;">
+        <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// SERVIÇOS</span>
+        <h2 style="font-size:44px;margin-top:14px;">O QUE ENTRA NO BOX.</h2>
+      </div>
+      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+        <div class="reveal" style="padding:0 28px 0 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px;">
+          <span class="mono" style="font-size:12px;color:var(--red);">01 / TROCA</span>
+          <h3 style="font-size:24px;">MOLAS</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.65;flex:1;">Substituição de molas originais ou esportivas, sempre com diagnóstico antes pra indicar a peça certa.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20saber%20sobre%20troca%20e%20manuten%C3%A7%C3%A3o%20de%20molas." target="_blank" class="mono" style="font-size:12px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:8px;">CONSULTAR →</a>
+        </div>
+        <div class="reveal" style="padding:0 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:16px;">
+          <span class="mono" style="font-size:12px;color:var(--red);">02 / AJUSTE</span>
+          <h3 style="font-size:24px;">ALTURA</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.65;flex:1;">Rebaixamento e levantamento com técnica e peça certa, sem abrir mão do curso da suspensão.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20saber%20sobre%20rebaixamento%20ou%20levantamento%20da%20suspens%C3%A3o." target="_blank" class="mono" style="font-size:12px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:8px;">CONSULTAR →</a>
+        </div>
+        <div class="reveal" style="padding:0 0 0 28px;display:flex;flex-direction:column;gap:16px;">
+          <span class="mono" style="font-size:12px;color:var(--red);">03 / DIAG.</span>
+          <h3 style="font-size:24px;">SUSPENSÃO</h3>
+          <p style="font-size:14px;color:var(--muted);line-height:1.65;flex:1;">Avaliação técnica pra identificar a causa real de ruído, balanço ou desgaste irregular.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20agendar%20um%20diagn%C3%B3stico%20de%20suspens%C3%A3o." target="_blank" class="mono" style="font-size:12px;color:var(--ink);border-bottom:1px solid var(--line);padding-bottom:8px;">CONSULTAR →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" class="section-pad" style="background:var(--bg-alt);border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="reveal" style="max-width:600px;margin-bottom:56px;">
+        <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// O PROCESSO</span>
+        <h2 style="font-size:44px;margin-top:14px;">COMO FUNCIONA.</h2>
+      </div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:0;">
+        <div class="reveal" style="padding:0 24px 0 0;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">01</span>
+          <h3 style="font-size:18px;margin-top:14px;">CHAME NO WHATS</h3>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;">Conte o modelo e o que precisa: barulho, troca, ajuste de altura.</p>
+        </div>
+        <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">02</span>
+          <h3 style="font-size:18px;margin-top:14px;">AVALIAÇÃO</h3>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;">Analisamos a suspensão e indicamos o ajuste certo.</p>
+        </div>
+        <div class="reveal" style="padding:0 24px;border-right:1px solid var(--line);">
+          <span class="mono" style="font-size:12px;color:var(--red);">03</span>
+          <h3 style="font-size:18px;margin-top:14px;">EXECUÇÃO</h3>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;">Serviço feito com acompanhamento técnico, sem cortar mola.</p>
+        </div>
+        <div class="reveal" style="padding:0 0 0 24px;">
+          <span class="mono" style="font-size:12px;color:var(--red);">04</span>
+          <h3 style="font-size:18px;margin-top:14px;">ENTREGA</h3>
+          <p style="font-size:13px;color:var(--muted);margin-top:8px;line-height:1.55;">Carro pronto, com orientação de uso e manutenção.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANÇA -->
+  <section class="section-pad" style="border-top:1px solid var(--line);">
+    <div class="container">
+      <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:48px;">
+        <div>
+          <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// CONFIANÇA</span>
+          <h2 style="font-size:44px;margin-top:14px;">QUEM JÁ RODOU AQUI.</h2>
+        </div>
+        <a href="https://www.google.com/maps/place/Alonso+Molas/@-23.6042071,-46.6308286,15z/data=!4m6!3m5!1s0x94ce5ba4b973585d:0x72b89a0f696fd949!8m2!3d-23.6042071!4d-46.6308286" target="_blank" class="mono" style="font-size:13px;color:var(--red);">4,9 ★ GOOGLE (314 AVALIAÇÕES) →</a>
+      </div>
+      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;">
+        <div class="reveal" style="padding:0 28px 0 0;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px;">
+          <span class="mono" style="font-size:11px;color:var(--muted);">GOOGLE REVIEW</span>
+          <p style="font-size:14px;line-height:1.6;color:var(--ink);font-style:italic;">"Trabalho sensacional e bem rápido... o preço cobrado é justo para o serviço. Recomendo a todos."</p>
+          <span class="mono" style="font-size:12px;color:var(--red);">— DEMI</span>
+        </div>
+        <div class="reveal" style="padding:0 28px;border-right:1px solid var(--line);display:flex;flex-direction:column;gap:14px;">
+          <span class="mono" style="font-size:11px;color:var(--muted);">GOOGLE REVIEW</span>
+          <p style="font-size:14px;line-height:1.6;color:var(--ink);font-style:italic;">"Me programei 1 ano pra visitar... ficou sinceramente espetacular! Marcelão e toda equipe de parabéns."</p>
+          <span class="mono" style="font-size:12px;color:var(--red);">— ENILSON JUNIOR</span>
+        </div>
+        <div class="reveal" style="padding:0 0 0 28px;display:flex;flex-direction:column;gap:14px;">
+          <span class="mono" style="font-size:11px;color:var(--muted);">GOOGLE REVIEW</span>
+          <p style="font-size:14px;line-height:1.6;color:var(--ink);font-style:italic;">"Oficina top para o propósito de rebaixamento... ficou com altura social perfeita."</p>
+          <span class="mono" style="font-size:12px;color:var(--red);">— EDSON GALVE</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="reveal" style="border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:60px 0;">
+    <div class="container social-row" style="display:flex;align-items:center;justify-content:space-between;gap:36px;">
+      <div>
+        <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// SIGA A EQUIPE</span>
+        <h2 style="font-size:32px;margin-top:10px;">@ALONSOMOLAS NO INSTAGRAM</h2>
+        <p style="font-size:14px;color:var(--muted);margin-top:8px;max-width:420px;">Antes/depois, bastidores da oficina e os carros que passaram por aqui.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;flex-shrink:0;">
+        <a href="https://www.instagram.com/alonsomolas/" target="_blank" class="btn btn-primary">SEGUIR</a>
+        <a href="https://pt-br.facebook.com/molasalonsomolas/" target="_blank" class="btn btn-outline">FACEBOOK</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" class="section-pad">
+    <div class="container grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div class="reveal" style="display:flex;flex-direction:column;gap:18px;">
+        <span class="mono" style="font-size:12px;color:var(--red);letter-spacing:0.1em;">// BOX</span>
+        <h2 style="font-size:36px;">MIRANDÓPOLIS, SP.</h2>
+        <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" style="font-size:14.5px;color:var(--muted);line-height:1.7;">Rua Luís Góis, 343/345<br>Mirandópolis, São Paulo — SP<br>04043-250</a>
+        <p class="mono" style="font-size:12.5px;color:var(--muted);line-height:1.8;">SEG–QUI 08:00–18:00<br>SEX 08:00–16:00<br>SÁB–DOM FECHADO</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:6px;">
+          <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" class="btn btn-outline" style="width:fit-content;">GOOGLE MAPS</a>
+          <a href="https://waze.com/ul?ll=-23.6042071,-46.6308286&navigate=yes" target="_blank" class="btn btn-outline" style="width:fit-content;">WAZE</a>
+        </div>
+      </div>
+      <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" class="reveal map-card" style="display:block;background:var(--surface);border:1px solid var(--line);height:260px;position:relative;overflow:hidden;background-image:repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 40px);">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;">
+          <span class="mono" style="font-size:12px;color:var(--red);">RUA LUÍS GÓIS, 343/345</span><br>
+          <span class="mono" style="font-size:10.5px;color:var(--ink);letter-spacing:0.08em;">ABRIR NO MAPA →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section style="position:relative;border-top:1px solid var(--line);padding:100px 0;text-align:center;overflow:hidden;">
+    <div class="hero-diag" style="position:absolute;bottom:-60%;left:50%;transform:translateX(-50%);width:140%;height:220%;background:var(--red);clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);opacity:0.12;"></div>
+    <div class="container reveal" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:22px;">
+      <h2 style="font-size:44px;max-width:640px;line-height:1.02;">50 ANOS DE ESTRADA NA SUA SUSPENSÃO.</h2>
+      <p style="font-size:15px;color:var(--muted);max-width:440px;">Fale com a gente e leve seu carro pra uma avaliação técnica — sem compromisso.</p>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:8px;">
+        <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" class="btn btn-primary">(11) 9 4027-4046</a>
+        <a href="tel:1155813831" class="btn btn-outline">(11) 5581-3831</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="container foot-row" style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:32px 40px;border-top:1px solid var(--line);">
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <span style="font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:0.03em;">ALONSO MOLAS</span>
+      <span class="mono" style="font-size:11px;color:var(--muted);">RUA LUÍS GÓIS, 343/345 — MIRANDÓPOLIS, SP · (11) 5581-3831</span>
+    </div>
+    <div style="display:flex;gap:6px;align-items:center;">
+      <a href="https://www.instagram.com/alonsomolas/" target="_blank" class="tap-icon" style="color:var(--muted);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.4" cy="6.6" r="0.6" fill="currentColor"/></svg>
+      </a>
+      <a href="https://pt-br.facebook.com/molasalonsomolas/" target="_blank" class="tap-icon" style="color:var(--muted);">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" aria-label="Falar no WhatsApp" class="fab">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+</div>
+
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

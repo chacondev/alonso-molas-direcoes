@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Alonso Molas — Minimal Técnico</title>
+<meta name="description" content="Direção Minimal Técnico inspirada na Apple para a Alonso Molas.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap">
+<style>
+    :root{ --red:#d83135; --red-dark:#a8262a; --ink:#0e0e0f; --muted:#6b6d70; --muted-2:#a3a29e; --line:#e7e5e2; --paper:#faf9f7; }
+    *{box-sizing:border-box;}
+    html{-webkit-text-size-adjust:100%;}
+    body{margin:0;font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:var(--ink);}
+    h1,h2,h3{margin:0;letter-spacing:-0.02em;font-weight:700;}
+    p{margin:0;}
+    a{color:var(--ink);text-decoration:none;}
+    .container{max-width:1100px;margin:0 auto;width:100%;padding:0 40px;}
+    .eyebrow{font-size:13px;font-weight:600;color:var(--muted);letter-spacing:0.14em;text-transform:uppercase;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-weight:600;font-size:15px;padding:16px 32px;border-radius:100px;cursor:pointer;min-height:52px;white-space:nowrap;}
+    .btn-primary{background:var(--ink);color:#fff;}
+    .btn-primary:hover{background:#000;}
+    .btn-red{background:var(--red);color:#fff;}
+    .btn-red:hover{background:var(--red-dark);}
+    .btn-outline{background:transparent;color:var(--ink);border:1px solid #d8d6d2;}
+    .btn-outline:hover{border-color:var(--ink);}
+    .tap-icon{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;flex-shrink:0;}
+    .fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));width:56px;height:56px;border-radius:50%;background:var(--red);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,0.22);z-index:40;transition:transform .2s ease;}
+    .fab:hover{transform:scale(1.07);}
+    .map-card{transition:opacity .2s ease;}
+    .map-card:hover{opacity:.82;}
+    .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.2,.7,.3,1),transform .7s cubic-bezier(.2,.7,.3,1);}
+    .reveal.is-visible{opacity:1;transform:none;}
+    .grid-3 > .reveal:nth-child(1),.grid-4 > .reveal:nth-child(1){transition-delay:0s;}
+    .grid-3 > .reveal:nth-child(2),.grid-4 > .reveal:nth-child(2){transition-delay:.08s;}
+    .grid-3 > .reveal:nth-child(3),.grid-4 > .reveal:nth-child(3){transition-delay:.16s;}
+    .grid-4 > .reveal:nth-child(4){transition-delay:.24s;}
+    @keyframes heroUp{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:none;}}
+    .hero-anim{opacity:0;animation:heroUp .8s cubic-bezier(.2,.7,.3,1) forwards;}
+    @keyframes drawSpring{to{stroke-dashoffset:0;}}
+    .spring-path{stroke-dasharray:900;stroke-dashoffset:900;animation:drawSpring 1.5s cubic-bezier(.4,.1,.2,1) .4s forwards;}
+    @media (prefers-reduced-motion: reduce){
+      .reveal,.hero-anim{opacity:1 !important;transform:none !important;animation:none !important;transition:none !important;}
+      .spring-path{stroke-dashoffset:0 !important;animation:none !important;}
+    }
+    @media (max-width:860px){
+      .container{padding:0 24px;}
+      .hero-h1{font-size:52px !important;}
+      .grid-3{grid-template-columns:1fr !important;gap:48px !important;}
+      .grid-4{grid-template-columns:1fr 1fr !important;gap:40px !important;}
+      .grid-2{grid-template-columns:1fr !important;gap:40px !important;}
+      .nav-links{display:none !important;}
+      .sec-pad{padding:64px 0 !important;}
+      .hero-pad{padding:56px 0 64px !important;}
+      .social-row{flex-direction:column !important;align-items:flex-start !important;gap:24px !important;}
+      .foot-row{flex-direction:column !important;align-items:flex-start !important;gap:20px !important;}
+      .fab{width:52px;height:52px;right:14px;bottom:calc(14px + env(safe-area-inset-bottom));}
+    }
+  </style>
+</head>
+<body>
+<div style="width:100%;background:#fff;overflow-x:hidden;">
+
+  <!-- NAV -->
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;height:84px;">
+    <span style="font-weight:800;font-size:16px;letter-spacing:0.02em;">ALONSO MOLAS</span>
+    <div class="nav-links" style="display:flex;align-items:center;gap:40px;">
+      <a href="#servicos" style="font-size:14px;color:var(--muted);font-weight:500;">Serviços</a>
+      <a href="#confianca" style="font-size:14px;color:var(--muted);font-weight:500;">Confiança</a>
+      <a href="#localizacao" style="font-size:14px;color:var(--muted);font-weight:500;">Localização</a>
+    </div>
+    <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" style="font-size:14px;font-weight:600;color:var(--ink);display:flex;align-items:center;gap:6px;">
+      Falar no WhatsApp
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero-pad" style="padding:64px 0 110px;text-align:center;">
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:32px;">
+      <span class="eyebrow hero-anim" style="animation-delay:.05s;">Alonso Molas · São Paulo</span>
+      <h1 class="hero-h1 hero-anim" style="font-size:88px;line-height:0.98;max-width:920px;animation-delay:.15s;">50 anos <span style="color:var(--red);">.</span><br>Uma suspensão.</h1>
+      <p class="hero-anim" style="font-size:19px;color:var(--muted);max-width:480px;line-height:1.55;animation-delay:.28s;">Cinco décadas de tradição em molas e suspensão automotiva, feitas com a precisão de quem faz isso desde sempre — em Mirandópolis, São Paulo.</p>
+      <div class="hero-anim" style="display:flex;gap:14px;margin-top:12px;flex-wrap:wrap;justify-content:center;animation-delay:.4s;">
+        <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+        <a href="tel:1155813831" class="btn btn-outline">(11) 5581-3831</a>
+      </div>
+      <svg class="hero-anim" width="120" height="220" viewBox="0 0 120 220" style="margin-top:32px;animation-delay:.5s;">
+        <path class="spring-path" d="M60 6 C24 6 24 30 60 30 C96 30 96 54 60 54 C24 54 24 78 60 78 C96 78 96 102 60 102 C24 102 24 126 60 126 C96 126 96 150 60 150 C24 150 24 174 60 174 C96 174 96 198 60 198"
+          fill="none" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PROVA RÁPIDA -->
+  <section class="sec-pad" style="border-top:1px solid var(--line);padding:100px 0;">
+    <div class="container grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:64px;">
+      <div class="reveal">
+        <span style="font-size:44px;font-weight:800;color:var(--red);">50</span>
+        <p style="font-size:16px;color:var(--muted);margin-top:16px;line-height:1.55;">anos dedicados só a molas e suspensão. Nada de generalismo.</p>
+      </div>
+      <div class="reveal">
+        <span style="font-size:44px;font-weight:800;color:var(--red);">01</span>
+        <p style="font-size:16px;color:var(--muted);margin-top:16px;line-height:1.55;">diagnóstico técnico antes de qualquer serviço. Sempre.</p>
+      </div>
+      <div class="reveal">
+        <span style="font-size:44px;font-weight:800;color:var(--red);">4,9</span>
+        <p style="font-size:16px;color:var(--muted);margin-top:16px;line-height:1.55;">de nota no Google, com 314 avaliações reais.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFÍCIOS -->
+  <section class="sec-pad" style="border-top:1px solid var(--line);padding:110px 0;">
+    <div class="container">
+      <div class="reveal" style="max-width:560px;margin-bottom:72px;">
+        <h2 style="font-size:40px;">Por que a Alonso Molas.</h2>
+      </div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:48px;">
+        <div class="reveal">
+          <h3 style="font-size:18px;font-weight:700;">50 anos de estrada</h3>
+          <p style="font-size:15px;color:var(--muted);margin-top:12px;line-height:1.6;">Cinco décadas de casos e modelos vistos — um repertório que poucas oficinas têm.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="font-size:18px;font-weight:700;">Diagnóstico primeiro</h3>
+          <p style="font-size:15px;color:var(--muted);margin-top:12px;line-height:1.6;">Nada de achismo: avaliamos antes de indicar qualquer serviço.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="font-size:18px;font-weight:700;">Peça certa</h3>
+          <p style="font-size:15px;color:var(--muted);margin-top:12px;line-height:1.6;">Processo adequado a cada modelo, preservando curso e conforto.</p>
+        </div>
+        <div class="reveal">
+          <h3 style="font-size:18px;font-weight:700;">Trabalho acompanhado</h3>
+          <p style="font-size:15px;color:var(--muted);margin-top:12px;line-height:1.6;">Do diagnóstico à entrega, sem largar o carro na mão de ninguém.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="sec-pad" style="border-top:1px solid var(--line);padding:110px 0;background:var(--paper);">
+    <div class="container">
+      <div class="reveal" style="max-width:560px;margin-bottom:72px;">
+        <h2 style="font-size:40px;">Serviços.</h2>
+      </div>
+      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:48px;">
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;">
+          <h3 style="font-size:20px;font-weight:700;">Troca e manutenção de molas</h3>
+          <p style="font-size:15px;color:var(--muted);line-height:1.65;flex:1;">Substituição de molas originais ou esportivas, sempre com diagnóstico antes da troca.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20saber%20sobre%20troca%20e%20manuten%C3%A7%C3%A3o%20de%20molas." target="_blank" style="font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;">
+            Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;">
+          <h3 style="font-size:20px;font-weight:700;">Rebaixamento e levantamento</h3>
+          <p style="font-size:15px;color:var(--muted);line-height:1.65;flex:1;">Ajuste de altura com técnica e peça certa, sem abrir mão do curso da suspensão.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20saber%20sobre%20rebaixamento%20ou%20levantamento%20da%20suspens%C3%A3o." target="_blank" style="font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;">
+            Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="reveal" style="display:flex;flex-direction:column;gap:16px;">
+          <h3 style="font-size:20px;font-weight:700;">Diagnóstico de suspensão</h3>
+          <p style="font-size:15px;color:var(--muted);line-height:1.65;flex:1;">Avaliação técnica pra identificar a causa real de ruído, balanço ou desgaste irregular.</p>
+          <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Quero%20agendar%20um%20diagn%C3%B3stico%20de%20suspens%C3%A3o." target="_blank" style="font-size:14px;font-weight:600;display:flex;align-items:center;gap:6px;">
+            Consultar <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="sec-pad" style="border-top:1px solid var(--line);padding:110px 0;">
+    <div class="container">
+      <div class="reveal" style="max-width:560px;margin-bottom:72px;">
+        <h2 style="font-size:40px;">Como funciona.</h2>
+      </div>
+      <div class="grid-4" style="display:grid;grid-template-columns:repeat(4,1fr);gap:40px;">
+        <div class="reveal">
+          <span style="font-size:32px;font-weight:800;color:var(--red);opacity:0.35;">01</span>
+          <h3 style="font-size:17px;font-weight:700;margin-top:14px;">Chame no WhatsApp</h3>
+          <p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55;">Conte o modelo e o que está sentindo ou buscando.</p>
+        </div>
+        <div class="reveal">
+          <span style="font-size:32px;font-weight:800;color:var(--red);opacity:0.35;">02</span>
+          <h3 style="font-size:17px;font-weight:700;margin-top:14px;">Avaliação na oficina</h3>
+          <p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55;">Analisamos a suspensão e indicamos o ajuste certo.</p>
+        </div>
+        <div class="reveal">
+          <span style="font-size:32px;font-weight:800;color:var(--red);opacity:0.35;">03</span>
+          <h3 style="font-size:17px;font-weight:700;margin-top:14px;">Serviço executado</h3>
+          <p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55;">Trabalho feito com acompanhamento técnico.</p>
+        </div>
+        <div class="reveal">
+          <span style="font-size:32px;font-weight:800;color:var(--red);opacity:0.35;">04</span>
+          <h3 style="font-size:17px;font-weight:700;margin-top:14px;">Carro pronto</h3>
+          <p style="font-size:14px;color:var(--muted);margin-top:8px;line-height:1.55;">Você retira com orientações de uso e manutenção.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONFIANÇA -->
+  <section id="confianca" class="sec-pad" style="border-top:1px solid var(--line);padding:110px 0;background:var(--paper);">
+    <div class="container">
+      <div class="reveal" style="display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:56px;">
+        <h2 style="font-size:40px;max-width:520px;">Quem já passou por aqui.</h2>
+        <a href="https://www.google.com/maps/place/Alonso+Molas/@-23.6042071,-46.6308286,15z/data=!4m6!3m5!1s0x94ce5ba4b973585d:0x72b89a0f696fd949!8m2!3d-23.6042071!4d-46.6308286" target="_blank" style="display:flex;align-items:center;gap:8px;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="var(--red)"><path d="M12 2l2.9 6.3 6.9.6-5.2 4.6 1.6 6.8L12 16.9 5.8 20.3l1.6-6.8L2.2 8.9l6.9-.6z"/></svg>
+          <span style="font-size:14px;font-weight:700;">4,9 no Google</span>
+          <span style="font-size:13px;color:var(--muted);">(314 avaliações)</span>
+        </a>
+      </div>
+      <div class="grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);gap:40px;">
+        <div class="reveal">
+          <p style="font-size:15.5px;line-height:1.65;color:var(--ink);">"Trabalho sensacional e bem rápido. Não senti diferença alguma em termos de conforto e o preço cobrado é justo."</p>
+          <span style="font-size:13px;color:var(--muted);display:block;margin-top:16px;">Demi</span>
+        </div>
+        <div class="reveal">
+          <p style="font-size:15.5px;line-height:1.65;color:var(--ink);">"Me programei 1 ano pra visitá-lo. Rodei 5.500 km e tirei 2 dias em São Paulo pra isso — ficou espetacular!"</p>
+          <span style="font-size:13px;color:var(--muted);display:block;margin-top:16px;">Enilson Junior</span>
+        </div>
+        <div class="reveal">
+          <p style="font-size:15.5px;line-height:1.65;color:var(--ink);">"Oficina top, e praticamente não perde o conforto. O carro ficou com altura social perfeita."</p>
+          <span style="font-size:13px;color:var(--muted);display:block;margin-top:16px;">Edson Galve</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL -->
+  <section class="reveal" style="border-top:1px solid var(--line);padding:64px 0;">
+    <div class="container social-row" style="display:flex;align-items:center;justify-content:space-between;gap:32px;">
+      <div>
+        <span class="eyebrow">Siga a Alonso Molas</span>
+        <h3 style="font-size:26px;margin-top:8px;">@alonsomolas no Instagram</h3>
+        <p style="font-size:14.5px;color:var(--muted);margin-top:8px;max-width:420px;">Antes e depois, bastidores e os carros que passaram por aqui.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="https://www.instagram.com/alonsomolas/" target="_blank" class="btn btn-red">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="0.7" fill="currentColor"/></svg>
+          Seguir no Instagram
+        </a>
+        <a href="https://pt-br.facebook.com/molasalonsomolas/" target="_blank" class="btn btn-outline">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCALIZAÇÃO -->
+  <section id="localizacao" class="sec-pad" style="border-top:1px solid var(--line);padding:110px 0;">
+    <div class="container grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;">
+      <div class="reveal" style="display:flex;flex-direction:column;gap:18px;align-items:flex-start;">
+        <h2 style="font-size:34px;">Mirandópolis, São Paulo.</h2>
+        <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" style="font-size:15.5px;line-height:1.7;color:var(--muted);">Rua Luís Góis, 343/345<br>Mirandópolis, São Paulo — SP, 04043-250</a>
+        <p style="font-size:15.5px;line-height:1.7;color:var(--muted);">Segunda a quinta: 08:00–18:00<br>Sexta: 08:00–16:00<br>Sábado e domingo: fechado</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;">
+          <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" class="btn btn-outline">
+            Google Maps
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a href="https://waze.com/ul?ll=-23.6042071,-46.6308286&navigate=yes" target="_blank" class="btn btn-outline">
+            Waze
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+      <a href="https://goo.gl/maps/V7zBWo5jBGbNKiGs9" target="_blank" class="reveal map-card" style="display:block;background:var(--paper);border:1px solid var(--line);border-radius:8px;height:280px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;flex-direction:column;align-items:center;gap:10px;">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="var(--red)" stroke="var(--red)"><path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 4 10.2C4 17.5 12 22 12 22z"/></svg>
+          <span style="font-size:12.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--muted);">Rua Luís Góis, 343/345</span>
+          <span style="font-size:11px;letter-spacing:0.06em;text-transform:uppercase;color:var(--red);font-weight:600;">Abrir no mapa →</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="reveal sec-pad" style="border-top:1px solid var(--line);padding:120px 0;text-align:center;">
+    <div class="container" style="display:flex;flex-direction:column;align-items:center;gap:24px;">
+      <h2 style="font-size:44px;max-width:640px;line-height:1.1;">50 anos de estrada. Um carro por vez.</h2>
+      <p style="font-size:16px;color:var(--muted);max-width:440px;">Fale com a gente e leve seu carro pra uma avaliação técnica — sem compromisso.</p>
+      <div style="display:flex;gap:14px;margin-top:8px;flex-wrap:wrap;justify-content:center;">
+        <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" class="btn btn-primary">Falar no WhatsApp</a>
+        <a href="tel:1155813831" class="btn btn-outline">(11) 5581-3831</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div style="border-top:1px solid var(--line);padding:32px 0;">
+    <div class="container foot-row" style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <span style="font-weight:800;font-size:14px;">ALONSO MOLAS</span>
+        <span style="font-size:12.5px;color:var(--muted-2);">Rua Luís Góis, 343/345 — Mirandópolis, SP · (11) 5581-3831</span>
+      </div>
+      <div style="display:flex;gap:6px;align-items:center;">
+        <a href="https://www.instagram.com/alonsomolas/" target="_blank" class="tap-icon" style="color:var(--muted);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="3.6"/><circle cx="17.4" cy="6.6" r="0.6" fill="currentColor"/></svg>
+        </a>
+        <a href="https://pt-br.facebook.com/molasalonsomolas/" target="_blank" class="tap-icon" style="color:var(--muted);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-2a5 5 0 0 0-5 5v3H6v4h2v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING WHATSAPP -->
+  <a href="https://api.whatsapp.com/send?phone=5511940274046&text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20falar%20sobre%20a%20suspens%C3%A3o%20do%20meu%20carro." target="_blank" aria-label="Falar no WhatsApp" class="fab">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+  </a>
+
+</div>
+
+<script>
+(function(){
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els = document.querySelectorAll('.reveal');
+  if (reduced || !('IntersectionObserver' in window)) {
+    els.forEach(function(el){ el.classList.add('is-visible'); });
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting){
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  els.forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>

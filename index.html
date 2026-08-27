@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#141414">
+<title>Alonso Molas — Opções de site</title>
+<meta name="description" content="Quatro direções de landing page para a Alonso Molas. Escolha a que mais combina.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Work+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --bg:#f4f2ef;
+    --ink:#171a1c;
+    --muted:#65696d;
+    --red:#d83135;
+    --line:#e2ddd4;
+    --card-bg:#ffffff;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--ink);}
+  h1,h2{font-family:'Oswald',sans-serif;margin:0;}
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:72px 24px 100px;}
+  .eyebrow{font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--red);}
+  header{text-align:center;margin-bottom:56px;}
+  header h1{font-size:38px;line-height:1.15;margin-top:14px;}
+  header p{font-size:16px;color:var(--muted);margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.55;}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+  .card{background:var(--card-bg);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 32px rgba(20,20,20,0.1);}
+  .swatch{height:120px;position:relative;}
+  .swatch-tradicional{background:linear-gradient(135deg,#191c1f,#131517);}
+  .swatch-minimal{background:linear-gradient(135deg,#fdfdfc,#eeeeec);}
+  .swatch-luxo{background:linear-gradient(135deg,#0a0b0d,#1c1f24);}
+  .swatch-performance{background:linear-gradient(135deg,#0c0c0d,#1a1a1b);}
+  .swatch::after{content:"";position:absolute;bottom:0;left:0;right:0;height:4px;background:var(--red);}
+  .card-body{padding:24px 26px 26px;display:flex;flex-direction:column;gap:10px;flex:1;}
+  .card-body h2{font-size:20px;}
+  .card-body p{font-size:14px;color:var(--muted);line-height:1.55;flex:1;}
+  .card-cta{display:inline-flex;align-items:center;gap:8px;font-family:'Oswald',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;color:var(--ink);margin-top:6px;}
+  .card:hover .card-cta{color:var(--red);}
+  footer{text-align:center;margin-top:56px;font-size:13px;color:var(--muted);}
+  @media (max-width:720px){
+    .grid{grid-template-columns:1fr;}
+    header h1{font-size:30px;}
+    .wrap{padding:48px 20px 72px;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">Alonso Molas</span>
+    <h1>Escolha o estilo do site</h1>
+    <p>Quatro direções de landing page pra você comparar. Clique em qualquer uma pra ver a página completa — depois é só me dizer qual você prefere.</p>
+  </header>
+
+  <div class="grid">
+
+    <a class="card" href="oficina-tradicional.html">
+      <div class="swatch swatch-tradicional"></div>
+      <div class="card-body">
+        <h2>Oficina Tradicional</h2>
+        <p>Fundo escuro industrial, tipografia robusta. Direta ao ponto, com cara de oficina de confiança.</p>
+        <span class="card-cta">Ver página completa →</span>
+      </div>
+    </a>
+
+    <a class="card" href="minimal-tecnico.html">
+      <div class="swatch swatch-minimal"></div>
+      <div class="card-body">
+        <h2>Minimal Técnico</h2>
+        <p>Inspirado na Apple: fundo claro, tipografia gigante, muito espaço em branco. Precisão pela simplicidade.</p>
+        <span class="card-cta">Ver página completa →</span>
+      </div>
+    </a>
+
+    <a class="card" href="luxo-automotivo.html">
+      <div class="swatch swatch-luxo"></div>
+      <div class="card-body">
+        <h2>Luxo Automotivo</h2>
+        <p>Inspirado na Mercedes-Benz: fundo escuro cinematográfico, serifa elegante, acabamento metálico.</p>
+        <span class="card-cta">Ver página completa →</span>
+      </div>
+    </a>
+
+    <a class="card" href="performance-motorsport.html">
+      <div class="swatch swatch-performance"></div>
+      <div class="card-body">
+        <h2>Performance / Motorsport</h2>
+        <p>Alto contraste, cortes diagonais, tipografia condensada. Velocidade e precisão técnica.</p>
+        <span class="card-cta">Ver página completa →</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>Alonso Molas · Rua Luís Góis, 343/345 — Mirandópolis, SP</footer>
+
+</div>
+</body>
+</html>
